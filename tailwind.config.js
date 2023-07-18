@@ -7,10 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        default: '#3A3D60',
+        primary: '#40CCFF',
+        secondary: '#FFCF00',
+      },
+      boxShadow: {
+        'gradient': '0 0 0 3px #FFCF00, 0 0 0 5px #40CCFF)',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-linear': 'linear-gradient(89deg, #40CCFF 0%, #FFCF00 100%)',
       },
     },
   },
