@@ -2,7 +2,7 @@ import { useLocale } from 'next-intl'
 import { getTranslator } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Fira_Sans_Condensed } from 'next/font/google'
 
 type RootLayoutProps = {
   children: React.ReactNode
@@ -11,7 +11,7 @@ type RootLayoutProps = {
   }
 }
 
-const inter = Inter({ subsets: ['latin'] })
+const FiraSansCondensed = Fira_Sans_Condensed({ weight: ['400', '700'], subsets: ['latin'] })
 
 export async function generateMetadata({ params: { locale } }: RootLayoutProps) {
   // While the `locale` is required, the namespace is optional and
@@ -33,7 +33,11 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${FiraSansCondensed.className} w-screen h-screen bg-gradient-to-b from-stone-300 via-neutral-500 to-zinc-400 backdrop-blur-3xl text-default`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
